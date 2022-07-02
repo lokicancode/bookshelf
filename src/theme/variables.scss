@@ -3,4 +3,6 @@
   --bs-error-color: #cc0000;
   --bs-success-color: green;
   --bs-text-on-dark-color: white;
+
+  --bs-viewport-height: calc(100vh - #{var(--bs-toolbar-height)});
 }

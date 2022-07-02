@@ -1,0 +1,13 @@
+<div class="landing-root center-children">
+  <div class="hero-text-container center-children">
+    <h1 class="mat-display-3 hero-text">{{ heroTextStr }}</h1>
+    <h1 class="mat-display-2 hero-sub-text">{{ heroSubTextStr }}</h1>
+  </div>
+
+  <div class="hero-btn-container">
+    <button color="primary" mat-raised-button (click)="onGoToSelf()">
+      {{ heroBtnLabel }}
+      <mat-icon>arrow_forward</mat-icon>
+    </button>
+  </div>
+</div>

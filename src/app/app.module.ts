@@ -9,11 +9,13 @@ import { HttpClientModule } from '@angular/common/http';
 import mockServer from './app.mock';
 import { CoreModule } from './core/core.module';
 import { DialogsModule } from './dialogs/dialogs.module';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 mockServer();
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, HeaderComponent, FooterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

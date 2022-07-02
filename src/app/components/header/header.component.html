@@ -1,0 +1,10 @@
+<mat-toolbar class="toolbar">
+  <div class="logo-title" (click)="onHeaderClick()">
+    <button mat-icon-button aria-label="logo icon">
+      <mat-icon>library_books</mat-icon>
+    </button>
+    <span>{{ title }}</span>
+  </div>
+  <span class="spacer"></span>
+  <button (click)="onLogin()" color="primary" mat-raised-button>Login</button>
+</mat-toolbar>
