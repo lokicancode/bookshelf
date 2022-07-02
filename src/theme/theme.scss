@@ -1,0 +1,17 @@
+@use "./variables" as vars;
+@use "./overlays" as ovs;
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+@include ovs.overlays();
+
+:root {
+  @include vars.css-variables();
+}

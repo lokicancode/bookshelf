@@ -1,0 +1,11 @@
+@mixin overlays {
+  .success-notif-panel {
+    background-color: var(--bs-success-color);
+    color: var(--bs-text-on-dark-color);
+  }
+
+  .error-notif-panel {
+    background-color: var(--bs-error-color);
+    color: var(--bs-text-on-dark-color);
+  }
+}

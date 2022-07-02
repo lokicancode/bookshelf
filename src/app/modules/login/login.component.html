@@ -1,0 +1,30 @@
+<div class="login-container">
+  <mat-card class="login-form-container">
+    <mat-card-title>{{ loginToContinueStr }}</mat-card-title>
+
+    <form [formGroup]="loginForm">
+      <mat-form-field appearance="outline">
+        <mat-label> {{ usernameLabel }} </mat-label>
+        <input #username formControlName="username" type="text" matInput />
+        <mat-error *ngIf="loginForm.controls.username.invalid">{{
+          getErrorMessage(loginForm.controls.username)
+        }}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label> {{ passwordLabel }} </mat-label>
+        <input #password formControlName="password" type="password" matInput />
+        <mat-error *ngIf="loginForm.controls.password.invalid">{{
+          getErrorMessage(loginForm.controls.password)
+        }}</mat-error>
+      </mat-form-field>
+      <button
+        (click)="onLogin()"
+        type="submit"
+        color="primary"
+        mat-raised-button
+      >
+        {{ loginBtnLabel }}
+      </button>
+    </form>
+  </mat-card>
+</div>

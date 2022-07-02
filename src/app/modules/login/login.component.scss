@@ -1,0 +1,23 @@
+.login-container {
+  background: #134e5e;
+  background: -webkit-linear-gradient(to right, #71b280, #134e5e);
+  background: linear-gradient(to right, #71b280, #134e5e);
+  min-height: calc(100vh - #{var(--bs-toolbar-height)});
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-form-container {
+  padding: 2rem;
+  min-width: 300px;
+  max-width: 400px;
+
+  form {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+}
