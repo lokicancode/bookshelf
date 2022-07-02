@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { User } from '../classes/user.class';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private _baseurl = 'api/v1';
+  private _baseurl = environment.apiUrl;
   private _token = '';
 
   private _user?: User;
@@ -20,6 +21,10 @@ export class AuthService {
 
   get user() {
     return this._user;
+  }
+
+  get isAuthorized() {
+    return !!this.token;
   }
 
   setAuthorized(token: string, user: User) {

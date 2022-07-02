@@ -37,12 +37,10 @@ export class LoginComponent implements OnInit {
     if (control.hasError('required')) {
       return this.requiredErrorMsg;
     }
-
     return '';
   }
 
   onLogin() {
-    throw Error('Error');
     const { username, password } = this.loginForm.value;
 
     this.browserService

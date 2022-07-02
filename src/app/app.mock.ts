@@ -14,17 +14,17 @@ export default () => {
       this.post('/login', (schema, request) => {
         const requestData = JSON.parse(request.requestBody);
         const user = schema.db['users'].find(requestData.username);
-        // if (user) {
-        //   return {
-        //     user: { username: user.id, displayName: user.displayName },
-        //     token: randomToken(),
-        //   };
-        // }
+        if (requestData && user && user.password === requestData.password) {
+          return {
+            user: { username: user.id, displayName: user.displayName },
+            token: randomToken(),
+          };
+        }
         return new Response(
           404,
           {},
           {
-            error: 'User nor found',
+            error: 'Invalid credentials',
           }
         );
       });

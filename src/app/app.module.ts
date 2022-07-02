@@ -8,18 +8,20 @@ import { HttpClientModule } from '@angular/common/http';
 
 import mockServer from './app.mock';
 import { CoreModule } from './core/core.module';
+import { DialogsModule } from './dialogs/dialogs.module';
 
 mockServer();
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    CoreModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     AppMaterialModule,
     HttpClientModule,
+    CoreModule,
+    DialogsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
