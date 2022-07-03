@@ -34,4 +34,9 @@ export class AuthService {
     userLocal.username = user.username;
     this._user = userLocal;
   }
+
+  clearAuth() {
+    this._token = '';
+    this._user = undefined;
+  }
 }

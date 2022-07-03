@@ -12,4 +12,8 @@ export class BrowserService {
       password,
     });
   }
+
+  doLogout() {
+    return this.http.post(`${this.authService.baseUrl}/logout`, {});
+  }
 }

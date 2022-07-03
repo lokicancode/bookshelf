@@ -6,5 +6,21 @@
     <span>{{ title }}</span>
   </div>
   <span class="spacer"></span>
-  <button (click)="onLogin()" color="primary" mat-raised-button>Login</button>
+  <button
+    [matMenuTriggerFor]="accountMenu"
+    mat-icon-button
+    *ngIf="isAuthorized(); else showLoginBtn"
+  >
+    <mat-icon>account_circle</mat-icon>
+  </button>
+
+  <ng-template #showLoginBtn>
+    <button (click)="onLogin()" color="primary" mat-raised-button>
+      {{ loginLabel }}
+    </button>
+  </ng-template>
 </mat-toolbar>
+
+<mat-menu #accountMenu="matMenu">
+  <button mat-menu-item (click)="onLogout()">{{ logoutLabel }}</button>
+</mat-menu>

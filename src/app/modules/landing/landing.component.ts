@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/core/services/auth.service';
 })
 export class LandingComponent implements OnInit {
   heroTextStr = 'All your favourite BOOKS 📚';
-  heroSubTextStr = '>@ your fingertips 🖐';
+  heroSubTextStr = '@ your fingertips 🖐';
   heroBtnLabel = 'Go to your shelf now';
 
   constructor(private router: Router) {}
