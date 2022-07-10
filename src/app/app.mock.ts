@@ -1,9 +1,10 @@
 import { Server, Response } from 'miragejs';
-import { users } from './app.db';
+import { bookshelf, users } from './app.db';
 import { randomToken } from './core/utils';
 
 const USERS_COLLECTION = 'users';
 const TOKENS_COLLECTION = 'tokens';
+const BOOKSHELF_COLLECTION = 'bookShelf';
 
 export default () => {
   new Server({
@@ -11,6 +12,7 @@ export default () => {
       server.db.loadData({
         [USERS_COLLECTION]: users,
         [TOKENS_COLLECTION]: {},
+        [BOOKSHELF_COLLECTION]: bookshelf,
       });
     },
 
@@ -61,6 +63,11 @@ export default () => {
         schema.db[TOKENS_COLLECTION].remove({ id: token });
 
         return {};
+      });
+
+      this.get('/bookshelf', (schema, request) => {
+        const data = schema.db[BOOKSHELF_COLLECTION];
+        return data;
       });
     },
   });

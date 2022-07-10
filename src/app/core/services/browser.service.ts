@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BookshelfAPIResponse } from '../interfaces';
 import { AuthService } from './auth.service';
 
 @Injectable({ providedIn: 'root' })
@@ -15,5 +16,11 @@ export class BrowserService {
 
   doLogout() {
     return this.http.post(`${this.authService.baseUrl}/logout`, {});
+  }
+
+  getBookshelf() {
+    return this.http.get<BookshelfAPIResponse[]>(
+      `${this.authService.baseUrl}/bookshelf`
+    );
   }
 }

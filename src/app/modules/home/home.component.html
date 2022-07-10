@@ -1,1 +1,18 @@
-<p>home works!</p>
+<mat-drawer-container>
+  <mat-drawer #sidenav position="end" mode="side">
+    <div class="viewer-container" *ngIf="activeBook">
+      <app-viewer
+        (closeEvent)="onViewerClose()"
+        [pdfUrl]="activeBook.pdfUrl"
+      ></app-viewer>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div class="shelf-container" *ngFor="let sh of bookShelf">
+      <app-shelf
+        [shelf]="sh"
+        (bookSelectedEvent)="onBookSelected($event)"
+      ></app-shelf>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

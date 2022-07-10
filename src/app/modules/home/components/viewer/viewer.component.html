@@ -1,0 +1,13 @@
+<div class="viewer-container">
+  <embed class="viewer-frame" *ngIf="sanitizedPdfUrl" [src]="sanitizedPdfUrl" />
+
+  <button
+    class="close-btn"
+    mat-mini-fab
+    color="primary"
+    aria-label="Close button"
+    (click)="onViewerClose()"
+  >
+    <mat-icon>close</mat-icon>
+  </button>
+</div>

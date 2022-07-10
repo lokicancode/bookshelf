@@ -1,0 +1,13 @@
+<section class="shelf" *ngIf="shelf">
+  <h2>{{ shelf.title }}</h2>
+
+  <div class="shelf-books" *ngIf="shelf">
+    <div
+      *ngFor="let book of shelf.books"
+      class="book-wrapper"
+      (click)="onBookClick(book)"
+    >
+      <app-book [book]="book"></app-book>
+    </div>
+  </div>
+</section>

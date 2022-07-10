@@ -1,0 +1,10 @@
+.shelf {
+  padding: 2rem;
+
+  .shelf-books {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
